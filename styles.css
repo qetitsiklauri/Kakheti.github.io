@@ -1,0 +1,130 @@
+body{         
+        text-align:center; 
+        margin: 0;
+        background-color: rgb(161, 132, 122);
+        } 
+
+.mode { 
+            float:right; 
+            margin-top: 20px;
+            margin-right: 20px;
+        } 
+.change { 
+            cursor: pointer; 
+            border: 1px solid #555; 
+            border-radius: 10%; 
+            width: 20px; 
+            text-align: center; 
+            padding: 8px; 
+            margin-left: 8px; 
+        } 
+.dark{ 
+            background-color: #1A1A1D; 
+            color: #e6e6e6; 
+        }
+
+.topnav {
+  overflow: hidden;
+  background-color: #501B1D;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #C2CAD0;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.7vw;
+}
+
+.topnav a:hover {
+  background-color: #6F2232;
+  color: black;
+}
+
+
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+.visit{
+  color: rgb(147, 165, 186);
+}
+#hide, #show {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 1 1 auto;
+  font-family: Inter,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s,-webkit-box-shadow .2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#hide, #show:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.mail{
+  float: right;
+  margin-top: 30%;
+}
+ .mail:link {
+  color: rgb(155, 192, 209);
+  background-color: rgb(138, 121, 120);
+}
+
+.mail:visited {
+  color: rgb(155, 192, 209);
+  background-color: rgb(138, 121, 120);
+}
+
+.mail:hover {
+  color: rgb(199, 93, 84);
+  background-color: rgb(77, 64, 63);
+}
+
+.mail:active {
+  color: rgb(199, 93, 84);
+  background-color: rgb(77, 64, 63);
+} 

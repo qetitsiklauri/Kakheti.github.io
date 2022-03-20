@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <noscript>Your browser does not support JavaScript!</noscript>
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</script>
+</head>
+<body>
+  <header>Map of Kakheti</header>
+  <div class="mode"> 
+        <b>Select dark Mode:</b><span class="change">OFF</span> 
+    </div><br>  
+    <form action="index.html" method="get" target="_self">
+         <button type="submit" class="but">back</button>
+      </form>  
+
+<div id="image-map">
+   <img width="801" height="900" src="image10.jpg" alt="Our Locations"> 
+   <div class="pin pin-down" data-xpos="575" data-ypos="400">  
+    <h2>Lagodekhi</h2>     
+    <ul>
+      <li><strong>Coordinates 41.8186° N, 46.2781° E</strong></li>
+      <li><a href="https://en.wikipedia.org/wiki/Lagodekhi" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>  
+<div class="pin pin-down" data-xpos="390" data-ypos="370">  
+    <h2>Kvareli</h2>     
+    <ul>
+      <li><strong>Coordinates 41.9484° N, 45.8148° E</strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%A7%E1%83%95%E1%83%90%E1%83%A0%E1%83%94%E1%83%9A%E1%83%98" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin pin-down" data-xpos="115" data-ypos="275">  
+    <h2>Akhmeta</h2>     
+    <ul>
+      <li><strong>Coordinates 42.0385° N, 45.2068° E</strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%90%E1%83%AE%E1%83%9B%E1%83%94%E1%83%A2%E1%83%90" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin pin-down" data-xpos="150" data-ypos="470">  
+    <h2>Sagarejo</h2>     
+    <ul>
+      <li><strong>Coordinates 41.7254° N, 45.3351° E E</strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%A0%E1%83%94%E1%83%AF%E1%83%9D" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin pin-down" data-xpos="230" data-ypos="365">  
+    <h2>Telavi</h2>     
+    <ul>
+      <li><strong>Coordinates 41.9185° N, 45.4777° E </strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%97%E1%83%94%E1%83%9A%E1%83%90%E1%83%95%E1%83%98" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin pin-down" data-xpos="375" data-ypos="465">  
+    <h2>Gurjaani</h2>     
+    <ul>
+      
+      <li><strong>Coordinates 41.7439° N, 45.7894° E</strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%90%E1%83%AE%E1%83%9B%E1%83%94%E1%83%A2%E1%83%90" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin" data-xpos="555" data-ypos="685">  
+    <h2>Dedoplistskaro</h2>     
+    <ul>
+      <li><strong>Coordinates 41.4672° N, 46.1175° E</strong></li>
+      <li><a href="https://ka.wikipedia.org/wiki/%E1%83%93%E1%83%94%E1%83%93%E1%83%9D%E1%83%A4%E1%83%9A%E1%83%98%E1%83%A1%E1%83%AC%E1%83%A7%E1%83%90%E1%83%A0%E1%83%9D" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+  <div class="pin" data-xpos="455" data-ypos="560">  
+    <h2>Sighnaghi</h2>     
+    <ul>
+      <li><strong>Coordinates 41.6111° N, 45.9271° E</strong></li>
+      <li><a href="https://en.wikipedia.org/wiki/Signagi" target="_blank">Website</a></li>
+      <li>Coming any time as you wish</li>
+    </ul>
+  </div>
+</div>
+<script>$(document).ready(function(){
+
+    // set the image-map width and height to match the img size
+    $('#image-map').css({'width':$('#image-map img').width(),
+                      'height':$('#image-map img').height()
+    })
+    
+    //tooltip direction
+    var tooltipDirection;
+                 
+    for (i=0; i<$(".pin").length; i++)
+    {               
+        // set tooltip direction type - up or down             
+        if ($(".pin").eq(i).hasClass('pin-down')) {
+            tooltipDirection = 'tooltip-down';
+        } else {
+            tooltipDirection = 'tooltip-up';
+            }
+    
+        // append the tooltip
+        $("#image-map").append("<div style='left:"+$(".pin").eq(i).data('xpos')+"px;top:"+$(".pin").eq(i).data('ypos')+"px' class='" + tooltipDirection +"'>\
+                                            <div class='tooltip'>" + $(".pin").eq(i).html() + "</div>\
+                                    </div>");
+    }    
+    
+    // show/hide the tooltip
+    $('.tooltip-up, .tooltip-down').mouseenter(function(){
+                $(this).children('.tooltip').fadeIn(100);
+            }).mouseleave(function(){
+                $(this).children('.tooltip').fadeOut(100);
+            })
+});
+
+
+  $( ".change" ).on("click", function() { 
+            if( $( "body" ).hasClass( "dark" )) { 
+                $( "body" ).removeClass( "dark" ); 
+                $( ".change" ).text( "OFF" ); 
+            } else { 
+                $( "body" ).addClass( "dark" ); 
+                $( ".change" ).text( "ON" ); 
+            } 
+        }); 
+
+
+
+
+
+</script>
+</body>
+</html>
+
